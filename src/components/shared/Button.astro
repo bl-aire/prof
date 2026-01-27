@@ -1,0 +1,44 @@
+---
+const { variant, fullWidth, color, ...props } = Astro.props;
+---
+
+<button class={`button ${fullWidth ? "--fullWidth" : ""} ${variant === "outlined" && '--outlined'} ${color == "black" && "--black"}`} {...props}>
+    <slot />
+</button>
+
+<style lang="scss" scoped>
+    @use "@styles/abstracts/variables.scss" as *;
+    @use '@styles/abstracts/functions' as *;
+
+    .button{
+        padding: rem(24) rem(64) ;
+        background-color: $color-black;
+        color: $color-white;
+        border-radius: rem(40);
+        border: rem(1) solid transparent;
+        font-size: rem(28);
+        font-weight: 500;
+        width: fit-content;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    .--outlined{
+        background-color: $color-white;
+        border: rem(2) solid $color-primary;
+        color: $color-primary;
+    }
+
+    .--black{
+        background-color: transparent !important;
+        border: rem(2) solid black !important;
+        color: $color-primary !important;
+    }
+
+    .--fullWidth{
+        display: block;
+        width: 100%;
+    }
+</style>

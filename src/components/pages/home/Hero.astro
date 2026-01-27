@@ -1,0 +1,84 @@
+---
+//@: Assets
+
+//@: Components
+import Button from "@components/shared/Button.astro"
+---
+
+<section class="hero">
+    <div class="hero__stack">
+        <p class="hero__stack__content">ACADEMIC LEADER & RESEARCHER</p>
+        <h1 class="hero__stack__title">
+            Turning Evidence and Education into <span class="hero__stack__title__span">Meaningful Improvements</span> in People's Lives
+        </h1>
+    </div>
+    <div class="hero__stack">
+        <p class="hero__stack__content">
+            Prof. Amos Gitau Njuguna is a senior academic leader working across
+            universities, research networks, and community institutions to
+            ensure that <span class="hero__stack__title__span">education and evidence translate into real improvements
+            in wellbeing, opportunity, and inclusion.</span>
+        </p>
+        <Button>Explore &rarr;</Button>
+    </div>
+</section>
+
+<style lang="scss" scoped>
+    @use "@styles/abstracts/variables.scss" as *;
+    @use "@styles/abstracts/mixins.scss" as *;
+    @use "@styles/abstracts/functions.scss" as *;
+
+    .hero {
+        padding: rem(200) $base-spacing;
+        margin: rem(150) 0 0;
+        position: relative;
+        @include d-flex-between-center;
+        gap: rem(100);
+
+        @media screen and (min-width: $breakpoint-md) {
+            margin: rem(128) 0;
+        }
+
+        @media screen and (max-width: $breakpoint-xl) {
+            padding: calc($base-spacing - rem(96));
+            margin: rem(64) 0;
+        }
+
+        @media screen and (max-width: $breakpoint-md) {
+            gap: rem(96);
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            @include d-flex-column;
+            gap: rem(80);
+        }
+
+        @media screen and (max-width: $breakpoint-xs) {
+            padding: rem(160) rem(32);
+            gap: rem(96);
+        }
+
+        &__stack {
+            @include d-flex-column;
+            gap: rem(48);
+            width: min(rem(1200), 100%);
+
+            &__title {
+                font-size: rem(80);
+                font-weight: 500;
+                color: $color-dark-3;
+                
+                &__span {
+                    color: $color-dark;
+                }
+            }
+
+            &__content {
+                font-size: rem(32);
+                font-weight: 500;
+                line-height: 3ch;
+                color: $color-dark-3;
+            }
+        }
+    }
+</style>

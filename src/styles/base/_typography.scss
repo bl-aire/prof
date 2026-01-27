@@ -1,0 +1,68 @@
+@use '@styles/abstracts/functions'as *;
+@use '@styles/abstracts/variables'as *;
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $font-primary;
+    font-size: rem(16);
+    line-height: 1.5;
+    color: $color-dark;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+// Scale-based system (step down the ladder)
+h1 {
+    font-size: scale(5);
+}
+
+// ~3.05rem (if base=1rem, ratio=1.25)
+h2 {
+    font-size: scale(4);
+}
+
+// ~2.44rem
+h3 {
+    font-size: scale(3);
+}
+
+// ~1.95rem
+h4 {
+    font-size: scale(2);
+}
+
+// ~1.56rem
+h5 {
+    font-size: scale(1);
+}
+
+// ~1.25rem
+h6 {
+    font-size: scale(0);
+}
+
+// 1rem
+
+p {
+    font-size: rem(24);
+}
+
+a {
+    color: $color-primary-dark;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+        color: $color-primary-dark;
+    }
+}

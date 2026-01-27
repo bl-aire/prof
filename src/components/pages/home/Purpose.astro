@@ -1,0 +1,115 @@
+---
+//@: Assets
+
+//@: Components
+---
+
+<section class="purpose">
+    <div class="purpose__content">
+        <div class="purpose__content__stack">
+            <h1>Why I Do This Work</h1>
+        </div>
+        <div class="purpose__content__stack">
+            <p>
+                I work across universities, boards, and community institutions
+                with one clear purpose: to help education and evidence translate
+                into meaningful improvements in people's lives. My work is
+                grounded in the belief that strong institutions, guided by
+                evidence and anchored in communities, can drive social and
+                economic change at scale.
+            </p>
+        </div>
+    </div>
+</section>
+
+<style lang="scss" scoped>
+    @use "@styles/abstracts/variables.scss" as *;
+    @use "@styles/abstracts/mixins.scss" as *;
+    @use "@styles/abstracts/functions.scss" as *;
+
+    .purpose {
+        padding: rem(100) $base-spacing;
+       
+
+        @media screen and (min-width: $breakpoint-md) {
+            padding: rem(80) 0;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url("../../../assets/lab.jpg");
+        }
+
+        @media screen and (max-width: $breakpoint-xl) {
+            padding: 0 calc($base-spacing - rem(96));
+        }
+
+        @media screen and (max-width: $breakpoint-md) {
+            gap: rem(96);
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            @include d-flex-column;
+            gap: rem(80);
+        }
+
+        @media screen and (max-width: $breakpoint-xs) {
+            padding: rem(160) rem(32);
+            gap: rem(96);
+        }
+
+        &__content {
+            padding: rem(128) $base-spacing;
+ 
+            @media screen and (max-width: $breakpoint-xl) {
+                padding: calc($base-spacing - rem(96));
+            }
+
+            @media screen and (max-width: $breakpoint-md) {
+                padding: rem(96);
+            }
+
+            @media screen and (max-width: $breakpoint-sm) {
+                padding: rem(96) rem(0);
+            }
+
+            @media screen and (max-width: $breakpoint-xs) {
+                padding: rem(32);
+            }
+
+            &__stack {
+                flex: 1;
+                width: min(rem(1000), 100%);
+                gap: rem(50);
+                @include d-flex-column;
+                margin-left: auto;
+                margin-right: 0;
+
+                @media screen and (max-width: $breakpoint-md) {
+                    margin: auto;
+                }
+
+                h1 {
+                    font-size: rem(60);
+                    font-weight: 500;
+                    color: $color-dark-3;
+
+                    @media screen and (min-width: $breakpoint-md) {
+                        color: $color-white;
+                    }
+                }
+
+                p {
+                    margin: rem(50) 0 0;
+                    font-size: rem(32);
+                    font-weight: 500;
+                    line-height: 3ch;
+                    color: $color-dark-3;
+
+                    @media screen and (min-width: $breakpoint-md) {
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+    }
+</style>

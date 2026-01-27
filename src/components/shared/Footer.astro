@@ -1,0 +1,141 @@
+---
+import { Image } from "astro:assets";
+
+//@: Assets
+
+//@: Components
+import Badge from "@components/shared/Badge.astro";
+import Button from "@components/shared/Button.astro";
+---
+
+<section class="footer">
+    <div class="footer__content">
+        <div class="footer__content__stack">
+            <Badge>Partnership Invitation</Badge>
+            <h1>Working Together for Impact</h1>
+            <p>
+                I collaborate with foundations, governments, universities, and
+                community organisations to strengthen institutions, improve
+                evidence use, and support initiatives that deliver meaningful,
+                scalable impact.
+            </p>
+            <h2>Prof. Amos Njuguna</h2>
+            <h3>Deputy Vice Chancellor, USIU-Africa</h3>
+            <h4>
+                Chair, Network of Impact Evaluation Researchers in Africa
+                (NIERA)
+            </h4>
+            <div class="footer__content__stack__group">
+                <Button>LinkedIn</Button>
+                <Button>Google Scholar</Button>
+            </div>
+        </div>
+    </div>
+    <div class="footer__footer">
+        <p>© 2026 Prof. Amos Gitau Njuguna. All rights reserved.</p>
+        <p>Transforming education and evidence into lasting impact.</p>
+    </div>
+</section>
+
+<style lang="scss" scoped>
+    @use "@styles/abstracts/variables.scss" as *;
+    @use "@styles/abstracts/mixins.scss" as *;
+    @use "@styles/abstracts/functions.scss" as *;
+
+    .footer {
+        background-color: $color-primary;
+        color: $color-white;
+
+        @media screen and (max-width: $breakpoint-xl) {
+            //margin: rem(64) 0 0;
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            @include d-flex-column;
+        }
+
+        &__content {
+            @include d-flex-column-center;
+            padding: rem(200) $base-spacing;
+
+            @media screen and (max-width: $breakpoint-xl) {
+                padding: calc($base-spacing - rem(96));
+                margin: rem(64) 0 0;
+            }
+
+            @media screen and (max-width: $breakpoint-md) {
+                gap: rem(96);
+            }
+
+            @media screen and (max-width: $breakpoint-sm) {
+                //@include d-flex-column;
+                gap: rem(80);
+            }
+
+            @media screen and (max-width: $breakpoint-xs) {
+                padding: rem(160) rem(32);
+                gap: rem(96);
+            }
+
+            &__stack {
+                @include d-flex-column-center;
+                width: min(rem(1600), 100%);
+                gap: rem(32);
+                text-align: center;
+
+                h1 {
+                    margin-top: rem(50);
+                    font-size: rem(60);
+                    font-weight: 500;
+                }
+                p {
+                    font-weight: 300;
+                    font-size: rem(32);
+                    line-height: 3ch;
+                }
+                h4 {
+                    font-weight: 300;
+                }
+
+                &__group {
+                    @include d-flex;
+                    gap: rem(32);
+                    margin: rem(50) auto 0;
+
+                    @media screen and (max-width: $breakpoint-sm) {
+                        @include d-flex-column;
+                        align-items: center;
+                        // gap: rem(64);
+                    }
+                }
+            }
+
+            &__container {
+                @include d-flex;
+                gap: rem(32);
+                margin: rem(80) auto;
+
+                @media screen and (max-width: $breakpoint-md) {
+                    @include d-flex-column;
+                    align-items: center;
+                    gap: rem(64);
+                    margin-top: rem(50);
+                }
+            }
+        }
+
+        &__footer {
+            @include d-flex-between;
+            gap: rem(32);
+            border-top: 1px solid $color-gray;
+            padding: rem(50) calc($base-spacing - rem(96));
+
+            @media screen and (max-width: $breakpoint-md) {
+                @include d-flex-column;
+                align-items: center;
+                gap: rem(32);
+                margin-top: rem(50);
+            }
+        }
+    }
+</style>

@@ -1,0 +1,98 @@
+---
+//@: Assets
+
+//@: Components
+import Badge from "@components/shared/Badge.astro";
+import CommunityList from "./community";
+---
+
+<section class="community">
+    <div class="community__stack">
+        <Badge>Community Engagement</Badge>
+        <h1 class="community__stack__title">
+            Wells of <span class="community__stack__title__span">Hope</span> Center
+        </h1>
+        <p class="community__stack__content">
+            Beyond academia, I serve on the Board of Wells of Hope Center, a
+            community-based organisation supporting vulnerable children and the
+            elderly through education, care, and dignity-centred community
+            interventions. This work grounds my leadership in lived realities
+            and reinforces the importance of inclusive, people-centred
+            development.
+        </p>
+    </div>
+    <div class="community__stack">
+        <div class="community__stack__slider">
+            <CommunityList client:only="react" />
+        </div>
+        
+    </div>
+</section>
+
+<style lang="scss" scoped>
+    @use "@styles/abstracts/variables.scss" as *;
+    @use "@styles/abstracts/mixins.scss" as *;
+    @use "@styles/abstracts/functions.scss" as *;
+
+    .community {
+        padding: rem(200) $base-spacing;
+        //margin: rem(150) 0 0;
+        position: relative;
+        @include d-flex-between-center;
+        gap: rem(100);
+        background-color: $color-gray-bg;
+
+        @media screen and (min-width: $breakpoint-md) {
+            //margin: rem(128) 0;
+        }
+
+        @media screen and (max-width: $breakpoint-xl) {
+            padding: calc($base-spacing - rem(96));
+            //margin: rem(64) 0;
+        }
+
+        @media screen and (max-width: $breakpoint-md) {
+            gap: rem(96);
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            @include d-flex-column;
+            gap: rem(80);
+        }
+
+        @media screen and (max-width: $breakpoint-xs) {
+            padding: rem(160) rem(32);
+            gap: rem(96);
+        }
+
+        &__stack {
+            @include d-flex-column;
+            gap: rem(48);
+            //width: min(rem(1200), 100%);
+            width: min(rem(800), 100%);
+            flex: 1;
+
+            &__title {
+                font-size: rem(80);
+                font-weight: 500;
+                color: $color-dark-3;
+
+                &__span {
+                    color: $color-dark;
+                }
+            }
+
+            &__content {
+                font-size: rem(32);
+                font-weight: 500;
+                line-height: 3ch;
+                color: $color-dark-3;
+            }
+
+            &__slider{
+                margin: 0 auto;
+                align-self: flex-start;
+            }
+        }
+    }
+</style>

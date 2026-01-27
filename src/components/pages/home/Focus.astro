@@ -1,0 +1,139 @@
+---
+import { Image } from "astro:assets";
+
+//@: Assets
+
+//@: Components
+import Badge from "@components/shared/Badge.astro";
+---
+
+<section class="focus">
+    <div class="focus__content">
+        <div class="focus__content__stack">
+            <Badge>What I Do</Badge>
+            <h1>Areas of Focus</h1>
+        </div>
+        <div class="focus__content__container">
+            <div class="focus__content__container__item">
+                <img src="" alt="" />
+                <h3>Transformative Teaching, Learning & Research</h3>
+                <p>
+                    As Deputy Vice Chancellor for Transformative Teaching,
+                    Learning, and Research at USIU-Africa, I strengthen academic
+                    quality, relevance, and innovation. My focus is on preparing
+                    graduates to solve complex, real-world problems and ensuring
+                    that higher education contributes directly to social and
+                    economic development.
+                </p>
+            </div>
+            <div class="focus__content__container__item">
+                <img src="" alt="" />
+                <h3>Institutional Leadership & Governance</h3>
+                <p>
+                    I serve as Chair of Council at Nyandarua University College,
+                    supporting strategic governance, institutional growth, and
+                    community relevance. I also serve on the Board of Limuru
+                    Girls School in Kenya, where I support values-based
+                    education and leadership development for young women.
+                </p>
+            </div>
+            <div class="focus__content__container__item">
+                <img src="" alt="" />
+                <h3>Evidence, Policy & Learning Systems</h3>
+                <p>
+                    As Chair of the Network of Impact Evaluation Researchers in
+                    Africa (NIERA), I work at the interface of research and
+                    policy—strengthening evidence generation and use, convening
+                    researchers and decision-makers, and promoting learning that
+                    improves public programmes. This includes mentoring
+                    academics and early-career researchers.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style lang="scss" scoped>
+    @use "@styles/abstracts/variables.scss" as *;
+    @use "@styles/abstracts/mixins.scss" as *;
+    @use "@styles/abstracts/functions.scss" as *;
+
+    .focus {
+        padding: rem(200) $base-spacing;
+        //background-color: $color-gray-bg;
+
+        @media screen and (max-width: $breakpoint-xs) {
+            //margin: 0 0 rem(64);
+        }
+
+        @media screen and (max-width: $breakpoint-xl) {
+            padding: calc($base-spacing - rem(96));
+            //margin: rem(64) 0;
+        }
+
+        @media screen and (max-width: $breakpoint-md) {
+            gap: rem(96);
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            @include d-flex-column;
+            gap: rem(80);
+        }
+
+        @media screen and (max-width: $breakpoint-xs) {
+            padding: rem(160) rem(32);
+            gap: rem(96);
+        }
+
+        &__content {
+            @include d-flex-column-center;
+
+            &__stack {
+                @include d-flex-column-center;
+                h1 {
+                    margin-top: rem(50);
+                    font-size: rem(60);
+                    font-weight: 500;
+                    color: $color-dark-3;
+                }
+            }
+
+            &__container {
+                @include d-flex;
+                gap: rem(32);
+                margin: rem(80) auto;
+
+                @media screen and (max-width: $breakpoint-md) {
+                    @include d-flex-column;
+                    align-items: center;
+                    gap: rem(64);
+                    margin-top: rem(50);
+                }
+
+                &__item {
+                    flex: 1;
+                    //margin: auto;
+                    width: min(rem(700), 100%);
+                    padding: rem(128) rem(64);
+                    @include d-flex-column;
+                    gap: rem(32);
+                    box-shadow: 1px 1px 15px 1px #88888851;
+                    border-radius: rem(20);
+
+                    h3{
+                        font-size: rem(36);
+                        font-weight: 600;
+                        color: $color-dark-3;
+                    }
+
+                    p{
+                        font-size: rem(28);
+                        font-weight: 400;
+                        line-height: 2.5ch;
+                        color: $color-dark;
+                    }
+                }
+            }
+        }
+    }
+</style>

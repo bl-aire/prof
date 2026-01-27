@@ -1,0 +1,151 @@
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin text-ellipsis($lines: 1) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+@mixin custom-scrollbar($thumb: #999, $track: transparent) {
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $track;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $thumb;
+        border-radius: 4px;
+    }
+}
+
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        padding-top: ($height / $width) * 100%;
+    }
+
+    >* {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+
+$breakpoints: (xs: 576px,
+    sm: 768px,
+    md: 992px,
+    lg: 1200px,
+    xl: 1400px,
+);
+
+@mixin respond($size) {
+    @media (max-width: map-get($breakpoints, $size)) {
+        @content;
+    }
+}
+
+
+@mixin d-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin transparent-bg {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+@mixin d-flex-between {
+    @include d-flex;
+    justify-content: space-between;
+}
+
+@mixin d-flex-between-start {
+    @include d-flex-between;
+    align-items: flex-start;
+}
+
+@mixin d-flex-between-center {
+    @include d-flex-between;
+    align-items: center;
+}
+
+@mixin d-flex-between-end {
+    @include d-flex-between;
+    align-items: flex-end;
+}
+
+@mixin d-flex-center {
+    @include d-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin d-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin d-flex-column-between {
+    @include d-flex-column;
+    justify-content: space-between;
+}
+
+@mixin d-flex-column-between-start {
+    @include d-flex-column-between;
+    align-items: flex-start;
+}
+
+@mixin d-flex-column-between-center {
+    @include d-flex-column-between;
+    align-items: center;
+}
+
+@mixin d-flex-column-between-end {
+    @include d-flex-column-between;
+    align-items: flex-end;
+}
+
+@mixin d-flex-column-center {
+    @include d-flex-column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin d-flex-column-around {
+    @include d-flex-column;
+    justify-content: space-around;
+}
+
+/*@mixin d-grid {
+    grid-auto-rows: 1fr;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    gap: 20px;
+}*/
+
+@mixin clamp-text($number-of-lines) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: $number-of-lines;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

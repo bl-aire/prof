@@ -9,6 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.16.15"
+    "@astrojs/react": "^4.4.2",
+    "astro": "^5.16.15",
+    "react-slick": "^0.31.0",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "@types/react-slick": "^0.23.13",
+    "sass": "^1.97.3"
   }
 }

@@ -1,0 +1,45 @@
+---
+const { variant, fullWidth, ...props } = Astro.props;
+---
+
+<span class={`badge ${fullWidth ? "--fullWidth" : ""} ${variant == "white" && "--white"}`} {...props}>
+    
+    <slot />
+</span>
+
+<style lang="scss" scoped>
+    @use "@styles/abstracts/variables.scss" as *;
+    @use '@styles/abstracts/functions' as *;
+    @use '@styles/abstracts/mixins' as *;
+
+    .badge{
+        padding: rem(24) rem(64) ;
+        height: rem(60);
+        background-color: #ebebeb;
+        color: #605b5b;
+        border-radius: rem(100);
+        border: 1px solid transparent;
+        font-size: rem(28);
+        font-weight: 700;
+        @include d-flex-center;
+        width: fit-content;
+        gap: rem(10);
+
+        &__dot{
+            background-color: $color-primary;
+            width: rem(15);
+            height: rem(15);
+            border-radius: 50%;
+            display: inline-block;
+        }
+    }
+
+    .--white{
+        background-color: $color-white;
+    }
+
+    .--fullWidth{
+        display: block;
+        width: 100%;
+    }
+</style>

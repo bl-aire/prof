@@ -1,0 +1,117 @@
+---
+import { Image } from "astro:assets";
+
+//@: Assets
+import logo from "@assets/prof-bg.png";
+
+//@: Components
+---
+
+<header class="header">
+    <nav class="header__nav">
+        <a href="/">
+            <Image class="header__nav__brand" src={logo} alt="Professor Amos Logo" />
+        </a>
+        <ul class="header__nav__list">
+            <li class="header__nav__list__item">
+                <a href="/">Purpose</a>
+            </li>
+
+            <li class="header__nav__list__item">
+                <a href="/company">What I Do</a>
+            </li>
+
+            <li class="header__nav__list__item">
+                <a href="/support">Impact</a>
+            </li>
+             <li class="header__nav__list__item">
+                <a href="/company">Recognition</a>
+            </li>
+
+            <li class="header__nav__list__item">
+                <a href="/support">Connect</a>
+            </li>
+        </ul>
+        
+    </nav>
+
+</header>
+
+<style lang="scss" scoped>
+    @use "@styles/abstracts/variables.scss" as *;
+    @use "@styles/abstracts/mixins.scss" as *;
+    @use "@styles/abstracts/functions.scss" as *;
+
+    .header {
+        padding: rem(32) $base-spacing;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        z-index: 100;
+        position: fixed;
+        width: 100%;
+
+        @media screen and (max-width: $breakpoint-xl) {
+            padding: rem(32) calc($base-spacing - rem(96));
+        }
+
+        @media screen and (max-width: $breakpoint-md) {
+            @include d-flex-between-center;
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            padding: rem(32);
+        }
+
+        &__nav {
+            @include d-flex-between-center;
+
+            &__brand {
+                width: rem(288);
+                height: rem(64);
+                object-fit: cover;
+            }
+
+            &__list {
+                @include d-flex-between-center;
+                gap: rem(32);
+                width: min(rem(1000), 100%);
+                text-align: center;
+
+                @media screen and (max-width: $breakpoint-md) {
+                    display: none;
+                }
+
+                &__item {
+                    flex: 1;
+                    font-size: rem(28);
+                    font-weight: 500;
+
+                    a {
+                        color: $color-dark-3;
+                        
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+
+
+                    p {
+                        cursor: pointer;
+                        color: $color-dark-3;
+                        @include d-flex-center;
+                        gap: rem(16);
+                    }
+                }
+            }
+
+            &__cta {
+                display: block;
+
+                @media screen and (max-width: $breakpoint-md) {
+                    display: none;
+                }
+            }
+        }
+    }
+</style>

@@ -1,0 +1,92 @@
+---
+import { Image } from "astro:assets";
+
+//@: Assets
+
+//@: Components
+import Badge from "@components/shared/Badge.astro";
+---
+
+<section class="recognition">
+    <div class="recognition__content">
+        <div class="recognition__content__stack">
+            <Badge>Recognition</Badge>
+            <h1>Africa Evidence Leadership Award</h1>
+            <p>
+                In 2025, I was honoured with the <span
+                    >Africa Evidence Leadership Award for Evidence Mediation</span
+                > —recognising my contribution to translating research into policy
+                and practice and strengthening the connection between evidence and
+                decision-making.
+            </p>
+        </div>
+        <div class="recognition__content__box">
+            <span></span>
+        </div>
+    </div>
+</section>
+
+<style lang="scss" scoped>
+    @use "@styles/abstracts/variables.scss" as *;
+    @use "@styles/abstracts/mixins.scss" as *;
+    @use "@styles/abstracts/functions.scss" as *;
+
+    .recognition {
+        @media screen and (max-width: $breakpoint-sm) {
+            @include d-flex-column;
+        }
+
+        &__content {
+            @include d-flex-column-center;
+            padding: rem(200) $base-spacing;
+
+            @media screen and (max-width: $breakpoint-xl) {
+                padding: calc($base-spacing - rem(96));
+                margin: rem(64) 0 0;
+            }
+
+            @media screen and (max-width: $breakpoint-md) {
+                gap: rem(96);
+            }
+
+            @media screen and (max-width: $breakpoint-sm) {
+                gap: rem(80);
+            }
+
+            @media screen and (max-width: $breakpoint-xs) {
+                padding: rem(160) rem(32);
+                gap: rem(96);
+            }
+
+            &__stack {
+                @include d-flex-column-center;
+                width: min(rem(1200), 100%);
+                gap: rem(32);
+                text-align: center;
+                color: $color-dark;
+
+                h1 {
+                    margin-top: rem(50);
+                    font-size: rem(60);
+                    font-weight: 500;
+                    color: $color-dark-3;
+                }
+                p {
+                    font-size: rem(32);
+                    font-weight: 500;
+                    line-height: 3ch;
+                    color: $color-dark-3;
+                }
+
+                span {
+                    color: $color-dark;
+                }
+            }
+            &__box {
+                width: rem(200);
+                border-bottom: 1px solid $color-dark;
+                margin-top: rem(50);
+            }
+        }
+    }
+</style>

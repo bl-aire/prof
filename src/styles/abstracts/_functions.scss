@@ -1,0 +1,49 @@
+@use "sass:math";
+@use "sass:color";
+
+// Adjust opacity of a color
+@function alpha($color, $opacity) {
+    @return rgba($color, $opacity);
+}
+
+// Automatically decide text color (black or white) for contrast
+@function contrast-color($color, $dark: $color-dark, $light: $color-light) {
+    @if (lightness($color) > 50) {
+        @return $dark;
+    } @else {
+        @return $light;
+    }
+}
+
+// Convert px to rem (assuming 16px base)
+@function rem($px, $base: 16) {
+    @return math.div($px, $base) * 1rem;
+}
+
+
+// Modular scale (e.g. for typography)
+@function scale($step, $ratio: 1.25, $base: 1rem) {
+    @return $base * pow($ratio, $step);
+}
+
+@function tint-shade($clr, $amount) {
+  @return color.adjust($clr, $lightness: $amount);
+}
+
+
+// Create consistent spacing units (e.g. spacing(2) → 16px if base = 8px)
+$spacing-unit: 8px;
+
+@function spacing($multiplier) {
+    @return $spacing-unit * $multiplier;
+}
+
+
+// Replace spaces in a string with hyphens
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+    @return $string;
+}
