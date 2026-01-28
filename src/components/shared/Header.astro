@@ -2,14 +2,14 @@
 import { Image } from "astro:assets";
 
 //@: Assets
-import logo from "@assets/prof-bg-crop.jpg";
+import logo from "@assets/prof-bg-crop.png";
 
 //@: Components
 ---
 
 <header class="header">
     <nav class="header__nav">
-        <a href="#hero">
+        <a href="#home">
             <Image
                 class="header__nav__brand"
                 src={logo}
@@ -72,9 +72,11 @@ import logo from "@assets/prof-bg-crop.jpg";
             @include d-flex-between-center;
 
             &__brand {
-                width: rem(289);
-                height: rem(241);
-                object-fit: cover;
+                //width: rem(289);
+                //height: rem(241);
+                width: rem(240);
+                height: auto;
+                //object-fit: cover;
             }
 
             &__list {
