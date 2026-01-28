@@ -1,14 +1,11 @@
 ---
-import { Image } from "astro:assets";
-
 //@: Assets
 
 //@: Components
 import Badge from "@components/shared/Badge.astro";
-import Button from "@components/shared/Button.astro";
 ---
 
-<section class="impact">
+<section class="impact" id="impact">
     <div class="impact__content">
         <div class="impact__content__stack">
             <Badge>Impact</Badge>
@@ -76,8 +73,6 @@ import Button from "@components/shared/Button.astro";
                     <p>Impactful Partnerships</p>
                 </div>
             </div>
-            
-            
         </div>
     </div>
 </section>
@@ -90,6 +85,7 @@ import Button from "@components/shared/Button.astro";
     .impact {
         background-color: $color-black;
         color: $color-white;
+        scroll-margin-top: 80px;
 
         @media screen and (max-width: $breakpoint-sm) {
             @include d-flex-column;
@@ -109,7 +105,6 @@ import Button from "@components/shared/Button.astro";
             }
 
             @media screen and (max-width: $breakpoint-sm) {
-                //@include d-flex-column;
                 gap: rem(80);
             }
 
@@ -120,7 +115,6 @@ import Button from "@components/shared/Button.astro";
 
             &__stack {
                 @include d-flex-column-center;
-                //width: min(rem(1800), 100%);
                 width: 100%;
                 gap: rem(32);
                 text-align: center;
@@ -130,11 +124,13 @@ import Button from "@components/shared/Button.astro";
                     font-size: rem(60);
                     font-weight: 500;
                 }
+
                 p {
                     font-weight: 300;
                     font-size: rem(32);
                     line-height: 3ch;
                 }
+
                 h2 {
                     margin: rem(50) auto;
 
@@ -150,7 +146,6 @@ import Button from "@components/shared/Button.astro";
                     @media screen and (max-width: $breakpoint-sm) {
                         @include d-flex-column;
                         align-items: center;
-                        // gap: rem(64);
                     }
 
                     h3{

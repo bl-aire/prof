@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@types/react-slick": "^0.23.13",
+    "astro-icon": "^1.1.5",
     "sass": "^1.97.3"
   }
 }

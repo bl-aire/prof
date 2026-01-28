@@ -15,7 +15,7 @@
             height: rem(600);
             margin: rem(30) 0 0;
             border-radius: rem(24);
-            background-image: url("../../../../assets/v1.jpeg");
+            background-image: url("../../../../assets/v1.webp");
             background-size: cover;
             background-position: bottom;
             background-repeat: no-repeat;
@@ -42,19 +42,11 @@
                         width: min(rem(400));
                     }
                 }
-
-                /*&:hover {
-                    background-color: rgb(0, 0, 0, 0.6);
-
-                    .projects__slider__box1__content__text {
-                        opacity: 1;
-                    }
-                }*/
             }
         }
 
         &__box1 {
-            background-image: url("../../../../assets/v1.jpeg");
+            background-image: url("../../../../assets/v1.webp");
 
             &__content {
                 &:hover {
@@ -68,7 +60,7 @@
         }
 
         &__box2 {
-            background-image: url("../../../../assets/v2.jpeg");
+            background-image: url("../../../../assets/v2.webp");
 
             &__content {
                 &:hover {
@@ -82,7 +74,7 @@
         }
 
         &__box3 {
-            background-image: url("../../../../assets/v3.jpeg");
+            background-image: url("../../../../assets/v3.webp");
 
             &__content {
                 &:hover {
@@ -96,7 +88,7 @@
         }
 
         &__box4 {
-            background-image: url("../../../../assets/v4.jpeg");
+            background-image: url("../../../../assets/v4.webp");
 
             &__content {
                 &:hover {
@@ -110,7 +102,7 @@
         }
 
         &__box5 {
-            background-image: url("../../../../assets/v5.jpeg");
+            background-image: url("../../../../assets/v5.webp");
 
             &__content {
                 &:hover {
@@ -124,7 +116,7 @@
         }
 
         &__box6 {
-            background-image: url("../../../../assets/v6.jpeg");
+            background-image: url("../../../../assets/v6.webp");
 
             &__content {
                 &:hover {
@@ -138,7 +130,7 @@
         }
 
         &__box7 {
-            background-image: url("../../../../assets/v7.jpeg");
+            background-image: url("../../../../assets/v7.webp");
 
             &__content {
                 &:hover {
@@ -152,7 +144,7 @@
         }
 
         &__box8 {
-            background-image: url("../../../../assets/v8.jpeg");
+            background-image: url("../../../../assets/v8.webp");
 
             &__content {
                 &:hover {

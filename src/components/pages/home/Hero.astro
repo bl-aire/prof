@@ -5,7 +5,7 @@
 import Button from "@components/shared/Button.astro"
 ---
 
-<section class="hero">
+<section class="hero" id="hero">
     <div class="hero__stack">
         <p class="hero__stack__content">ACADEMIC LEADER & RESEARCHER</p>
         <h1 class="hero__stack__title">
@@ -19,7 +19,10 @@ import Button from "@components/shared/Button.astro"
             ensure that <span class="hero__stack__title__span">education and evidence translate into real improvements
             in wellbeing, opportunity, and inclusion.</span>
         </p>
-        <Button>Explore &rarr;</Button>
+        <a href="#purpose">
+            <Button>Explore &rarr;</Button>
+        </a>
+        
     </div>
 </section>
 
@@ -34,6 +37,7 @@ import Button from "@components/shared/Button.astro"
         position: relative;
         @include d-flex-between-center;
         gap: rem(100);
+        scroll-margin-top: 80px;
 
         @media screen and (min-width: $breakpoint-md) {
             margin: rem(128) 0;

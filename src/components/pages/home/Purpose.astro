@@ -4,7 +4,7 @@
 //@: Components
 ---
 
-<section class="purpose">
+<section class="purpose" id="purpose">
     <div class="purpose__content">
         <div class="purpose__content__stack">
             <h1>Why I Do This Work</h1>
@@ -29,14 +29,14 @@
 
     .purpose {
         padding: rem(100) $base-spacing;
-       
+        scroll-margin-top: 80px;
 
         @media screen and (min-width: $breakpoint-md) {
             padding: rem(80) 0;
             background-size: 100%;
             background-repeat: no-repeat;
             background-position: center;
-            background-image: url("../../../assets/lab.jpg");
+            background-image: url("../../../assets/lab.webp");
         }
 
         @media screen and (max-width: $breakpoint-xl) {
@@ -59,7 +59,7 @@
 
         &__content {
             padding: rem(128) $base-spacing;
- 
+
             @media screen and (max-width: $breakpoint-xl) {
                 padding: calc($base-spacing - rem(96));
             }

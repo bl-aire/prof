@@ -2,39 +2,44 @@
 import { Image } from "astro:assets";
 
 //@: Assets
-import logo from "@assets/prof-bg.png";
+import logo from "@assets/prof-bg.webp";
 
 //@: Components
 ---
 
 <header class="header">
     <nav class="header__nav">
-        <a href="/">
-            <Image class="header__nav__brand" src={logo} alt="Professor Amos Logo" />
+        <a href="#hero">
+            <Image
+                class="header__nav__brand"
+                src={logo}
+                alt="Professor Amos Logo"
+            />
         </a>
         <ul class="header__nav__list">
             <li class="header__nav__list__item">
-                <a href="/">Purpose</a>
+                <a href="#purpose">Purpose</a>
             </li>
 
             <li class="header__nav__list__item">
-                <a href="/company">What I Do</a>
+                <a href="#focus">Focus</a>
             </li>
 
             <li class="header__nav__list__item">
-                <a href="/support">Impact</a>
+                <a href="#impact">Impact</a>
             </li>
-             <li class="header__nav__list__item">
-                <a href="/company">Recognition</a>
+            <li class="header__nav__list__item">
+                <a href="#community">Community</a>
+            </li>
+            <li class="header__nav__list__item">
+                <a href="#recognition">Recognition</a>
             </li>
 
             <li class="header__nav__list__item">
-                <a href="/support">Connect</a>
+                <a href="#connect">Connect</a>
             </li>
         </ul>
-        
     </nav>
-
 </header>
 
 <style lang="scss" scoped>
@@ -89,12 +94,11 @@ import logo from "@assets/prof-bg.png";
 
                     a {
                         color: $color-dark-3;
-                        
+
                         &:hover {
                             text-decoration: underline;
                         }
                     }
-
 
                     p {
                         cursor: pointer;

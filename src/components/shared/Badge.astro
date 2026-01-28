@@ -3,7 +3,6 @@ const { variant, fullWidth, ...props } = Astro.props;
 ---
 
 <span class={`badge ${fullWidth ? "--fullWidth" : ""} ${variant == "white" && "--white"}`} {...props}>
-    
     <slot />
 </span>
 
@@ -23,15 +22,7 @@ const { variant, fullWidth, ...props } = Astro.props;
         font-weight: 700;
         @include d-flex-center;
         width: fit-content;
-        gap: rem(10);
-
-        &__dot{
-            background-color: $color-primary;
-            width: rem(15);
-            height: rem(15);
-            border-radius: 50%;
-            display: inline-block;
-        }
+        gap: rem(20);
     }
 
     .--white{
