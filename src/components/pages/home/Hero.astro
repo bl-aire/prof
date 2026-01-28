@@ -9,14 +9,14 @@ import Button from "@components/shared/Button.astro"
     <div class="hero__stack">
         <p class="hero__stack__content">ACADEMIC LEADER & RESEARCHER</p>
         <h1 class="hero__stack__title">
-            Turning Evidence and Education into <span class="hero__stack__title__span">Meaningful Improvements</span> in People's Lives
+            Turning Evidence and Education into <span class="hero__stack__title__span__title">Meaningful Improvements</span> in People's Lives.
         </h1>
     </div>
     <div class="hero__stack">
         <p class="hero__stack__content">
             Prof. Amos Gitau Njuguna is a senior academic leader working across
             universities, research networks, and community institutions to
-            ensure that <span class="hero__stack__title__span">education and evidence translate into real improvements
+            ensure that <span class="hero__stack__content__span">education and evidence translate into real improvements
             in wellbeing, opportunity, and inclusion.</span>
         </p>
         <a href="#purpose">
@@ -45,7 +45,6 @@ import Button from "@components/shared/Button.astro"
 
         @media screen and (max-width: $breakpoint-xl) {
             padding: calc($base-spacing - rem(96));
-            //margin: rem(64) 0;
             margin-top: rem(150);
         }
 
@@ -69,13 +68,16 @@ import Button from "@components/shared/Button.astro"
             width: min(rem(1200), 100%);
 
             &__title {
-                font-size: rem(80);
+                font-size: rem(72);
                 font-weight: 500;
                 color: $color-dark-3;
                 
-                &__span {
+                &__span__title {
+                    font-size: rem(80);
                     color: $color-dark;
                 }
+
+                
             }
 
             &__content {
@@ -83,6 +85,10 @@ import Button from "@components/shared/Button.astro"
                 font-weight: 500;
                 line-height: 3ch;
                 color: $color-dark-3;
+
+                &__span {
+                    color: $color-dark;
+                }
             }
         }
     }

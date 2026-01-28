@@ -32,11 +32,9 @@
         scroll-margin-top: 160px;
 
         @media screen and (min-width: $breakpoint-md) {
-            padding: rem(80) 0;
-            background-size: 100%;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-image: url("../../../assets/lab.webp");
+            background: rgba(0, 0, 0, 0.6) url("../../../assets/why-bg.jpeg")
+                fixed center/cover no-repeat;
+            padding: 0;
         }
 
         @media screen and (max-width: $breakpoint-xl) {
@@ -65,11 +63,17 @@
             }
 
             @media screen and (max-width: $breakpoint-md) {
-                padding: rem(96);
+                padding: rem(0);
+                padding: rem(80) 0;
             }
 
             @media screen and (max-width: $breakpoint-sm) {
                 padding: rem(96) rem(0);
+            }
+
+            @media screen and (min-width: $breakpoint-md) {
+                background-color: rgba(0, 0, 0, 0.4);
+                padding: rem(200) $base-spacing;
             }
 
             &__stack {

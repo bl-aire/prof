@@ -29,11 +29,11 @@ import Badge from "@components/shared/Badge.astro";
                 </div>
                 <div class="impact__content__stack__group__item">
                     <h3>1</h3>
-                    <p>Continental Network Co-founded</p>
+                    <p>Continental <br />Network Co-founded</p>
                 </div>
                 <div class="impact__content__stack__group__item">
                     <h3>200+</h3>
-                    <p>Students & Researchers Mentored</p>
+                    <p>Students & <br />Researchers Mentored</p>
                 </div>
                 <div class="impact__content__stack__group__item">
                     <h3>10+</h3>
@@ -41,20 +41,18 @@ import Badge from "@components/shared/Badge.astro";
                 </div>
                 <div class="impact__content__stack__group__item">
                     <h3>1</h3>
-                    <p>Community Organisation Supported</p>
+                    <p>Community Org.<br /> Supported</p>
                 </div>
             </div>
-            <h2>
-                Results Enabled Through Institutions & Programs
-            </h2>
+            <h2>Results Enabled Through Institutions & Programs</h2>
             <div class="impact__content__stack__group">
                 <div class="impact__content__stack__group__item">
                     <h3>20,000+</h3>
-                    <p>Youth & SMEs Supported</p>
+                    <p>Youth & <br /> SMEs Supported</p>
                 </div>
                 <div class="impact__content__stack__group__item">
                     <h3>80+</h3>
-                    <p>Researchers in Network</p>
+                    <p>Researchers in <br />Network</p>
                 </div>
                 <div class="impact__content__stack__group__item">
                     <h3>10+</h3>
@@ -62,7 +60,7 @@ import Badge from "@components/shared/Badge.astro";
                 </div>
                 <div class="impact__content__stack__group__item">
                     <h3>300+</h3>
-                    <p>Vulnerable Children & Elderly Reached</p>
+                    <p>Vulnerable Children <br />& Elderly Reached</p>
                 </div>
                 <div class="impact__content__stack__group__item">
                     <h3>60+</h3>
@@ -70,7 +68,7 @@ import Badge from "@components/shared/Badge.astro";
                 </div>
                 <div class="impact__content__stack__group__item">
                     <h3>50+</h3>
-                    <p>Impactful Partnerships</p>
+                    <p>Impactful<br /> Partnerships</p>
                 </div>
             </div>
         </div>
@@ -133,35 +131,38 @@ import Badge from "@components/shared/Badge.astro";
 
                 h2 {
                     margin: rem(50) auto;
-
                 }
 
                 &__group {
-                    @include d-flex;
-                    gap: rem(32);
+                    @include d-flex-between;
+                    gap: rem(52);
                     margin: rem(50) auto;
+                    flex-wrap: wrap;
 
-                    
 
                     @media screen and (max-width: $breakpoint-sm) {
                         @include d-flex-column;
                         align-items: center;
                     }
 
-                    h3{
+                    h3 {
                         font-size: rem(48);
-                        color:$color-primary-2;
+                        color: $color-primary-2;
+                        margin-bottom: rem(30);
                     }
 
-                    &__item{
-                        &:hover{
-                            scale:1.05;
+                    p {
+                        font-size: rem(28);
+                        line-height: 2.5ch;
+                    }
+
+                    &__item {
+                        &:hover {
+                            scale: 1.05;
                         }
                     }
                 }
             }
-
-            
         }
     }
 </style>
