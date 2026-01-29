@@ -48,7 +48,7 @@ import logo from "@assets/prof-bg-crop.png";
     @use "@styles/abstracts/functions.scss" as *;
 
     .header {
-        padding: rem(32) $base-spacing;
+        padding: 0 $base-spacing;
         top: 0;
         left: 0;
         background-color: #fff;
@@ -57,7 +57,7 @@ import logo from "@assets/prof-bg-crop.png";
         width: 100%;
 
         @media screen and (max-width: $breakpoint-xl) {
-            padding: rem(32) calc($base-spacing - rem(96));
+            padding: rem(0) calc($base-spacing - rem(96));
         }
 
         @media screen and (max-width: $breakpoint-md) {
@@ -65,7 +65,12 @@ import logo from "@assets/prof-bg-crop.png";
         }
 
         @media screen and (max-width: $breakpoint-sm) {
+            padding:0 calc($base-spacing - rem(96));
+        }
+
+        @media screen and (max-width: $breakpoint-xs) {
             padding:0 rem(32);
+            
         }
 
         &__nav {
@@ -73,7 +78,8 @@ import logo from "@assets/prof-bg-crop.png";
 
             &__brand {
                 width: auto;
-                height: rem(110);
+                height: rem(120);
+                cursor: pointer;
             }
 
             &__list {

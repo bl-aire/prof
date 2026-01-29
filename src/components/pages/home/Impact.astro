@@ -47,7 +47,7 @@ import Badge from "@components/shared/Badge.astro";
             <h2>Results Enabled Through Institutions & Programs</h2>
             <div class="impact__content__stack__group">
                 <div class="impact__content__stack__group__item">
-                    <h3>20,000+</h3>
+                    <h3>20k+</h3>
                     <p>Youth & <br /> SMEs Supported</p>
                 </div>
                 <div class="impact__content__stack__group__item">
@@ -60,7 +60,7 @@ import Badge from "@components/shared/Badge.astro";
                 </div>
                 <div class="impact__content__stack__group__item">
                     <h3>300+</h3>
-                    <p>Vulnerable Children <br />& Elderly Reached</p>
+                    <p>Vulnerable Children/<br />Elderly Reached</p>
                 </div>
                 <div class="impact__content__stack__group__item">
                     <h3>60+</h3>
@@ -121,6 +121,9 @@ import Badge from "@components/shared/Badge.astro";
                     margin-top: rem(50);
                     font-size: rem(60);
                     font-weight: 500;
+                    font-family: "Bricolage Grotesque", sans-serif;
+                    word-spacing: -2px;
+                    letter-spacing: -1px;
                 }
 
                 p {
@@ -131,14 +134,17 @@ import Badge from "@components/shared/Badge.astro";
 
                 h2 {
                     margin: rem(50) auto;
+                    font-family: "Bricolage Grotesque", sans-serif;
+                    word-spacing: -2px;
+                    letter-spacing: -1px;
                 }
 
                 &__group {
                     @include d-flex-between;
-                    gap: rem(52);
+                    gap: rem(32);
+                    width: min(rem(1500), 100%);
                     margin: rem(50) auto;
-                    flex-wrap: wrap;
-
+                    //flex-wrap: wrap;
 
                     @media screen and (max-width: $breakpoint-sm) {
                         @include d-flex-column;
@@ -146,17 +152,32 @@ import Badge from "@components/shared/Badge.astro";
                     }
 
                     h3 {
-                        font-size: rem(48);
+                        font-size: rem(64);
                         color: $color-primary-2;
-                        margin-bottom: rem(30);
+                        font-family: "Bricolage Grotesque", sans-serif;
+                        word-spacing: -2px;
+                        letter-spacing: -1px;
                     }
 
                     p {
-                        font-size: rem(28);
+                        font-size: rem(24);
                         line-height: 2.5ch;
                     }
 
                     &__item {
+                        width: min(rem(300), 100%);
+                        background: rgba(255, 255, 255, 0.1);
+                        border-radius: 16px;
+                        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                        backdrop-filter: blur(7.9px);
+                        -webkit-backdrop-filter: blur(7.9px);
+                        border: 1px solid rgba(255, 255, 255, 0.37);
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        padding: rem(20) rem(10);
+
                         &:hover {
                             scale: 1.05;
                         }

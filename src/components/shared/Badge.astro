@@ -14,8 +14,10 @@ const { variant, fullWidth, ...props } = Astro.props;
     .badge{
         padding: rem(24) rem(64) ;
         height: rem(60);
-        background-color: #ebebeb;
-        color: #605b5b;
+        //background-color: #ebebeb;
+        //color: #605b5b;
+        background-color: $color-blue;
+        color: $color-white !important;
         border-radius: rem(100);
         border: 1px solid transparent;
         font-size: rem(28);
@@ -27,6 +29,8 @@ const { variant, fullWidth, ...props } = Astro.props;
 
     .--white{
         background-color: $color-white;
+        color: $color-black;
+        border: 1px solid $color-blue;
     }
 
     .--fullWidth{

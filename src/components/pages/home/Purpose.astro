@@ -77,12 +77,11 @@
             }
 
             &__stack {
-                flex: 1;
                 width: min(rem(1000), 100%);
                 gap: rem(50);
                 @include d-flex-column;
-                margin-left: auto;
-                margin-right: 0;
+                margin: auto;
+                text-align: center;
 
                 @media screen and (max-width: $breakpoint-md) {
                     margin: auto;
@@ -96,6 +95,9 @@
                     font-size: rem(60);
                     font-weight: 500;
                     color: $color-dark-3;
+                    font-family: "Bricolage Grotesque", sans-serif;
+                    word-spacing: -2px;
+                    letter-spacing: -1px;
 
                     @media screen and (min-width: $breakpoint-md) {
                         color: $color-white;
