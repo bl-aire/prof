@@ -113,7 +113,7 @@ import Badge from "@components/shared/Badge.astro";
 
             &__stack {
                 @include d-flex-column-center;
-                width: 100%;
+                width:min(rem(1500), 100%);
                 gap: rem(32);
                 text-align: center;
 
@@ -130,6 +130,7 @@ import Badge from "@components/shared/Badge.astro";
                     font-weight: 300;
                     font-size: rem(24);
                     line-height: 3ch;
+
                 }
 
                 h2 {
