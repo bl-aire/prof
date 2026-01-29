@@ -45,6 +45,10 @@
             gap: rem(96);
         }
 
+        @media screen and (min-width: $breakpoint-md) {
+            padding:0;
+        }
+
         @media screen and (max-width: $breakpoint-sm) {
             @include d-flex-column;
             gap: rem(80);
@@ -63,7 +67,6 @@
             }
 
             @media screen and (max-width: $breakpoint-md) {
-                padding: rem(0);
                 padding: rem(80) 0;
             }
 
@@ -77,7 +80,7 @@
             }
 
             &__stack {
-                width: min(rem(1000), 100%);
+                width: min(rem(1200), 100%);
                 gap: rem(50);
                 @include d-flex-column;
                 margin: auto;
@@ -106,8 +109,8 @@
 
                 p {
                     margin: rem(50) 0 0;
-                    font-size: rem(32);
-                    font-weight: 500;
+                    font-size: rem(24);
+                    font-weight: 400;
                     line-height: 3ch;
                     color: $color-dark-3;
 
