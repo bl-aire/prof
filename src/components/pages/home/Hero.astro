@@ -12,7 +12,7 @@ import Button from "@components/shared/Button.astro";
     <div class="hero__stack">
         <p class="hero__stack__subtitle">ACADEMIC LEADER & RESEARCHER</p>
         <h1 class="hero__stack__title">
-            Turning Evidence and Education into Meaningful
+            Turning Evidence and<br/> Education into Meaningful
             <span class="hero__stack__title__span__title">
                 <span>Improvements</span>
                 <Image
@@ -96,6 +96,10 @@ import Button from "@components/shared/Button.astro";
                         width: 100%;
                         height: 10px;
                         margin-top: -10px;
+
+                        @media screen and (min-width: $breakpoint-md) {
+                            width:70%;
+                        }
                     }
                 }
             }
