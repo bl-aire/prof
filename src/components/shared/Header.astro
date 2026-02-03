@@ -10,37 +10,35 @@ import logo from "@assets/prof-bg-crop.png";
 <header class="header">
     <nav class="header__nav">
         <a href="#home">
-            <Image
-                class="header__nav__brand"
-                src={logo}
-                alt="Professor Amos Logo"
-            />
+            <h2 class="header__nav__brand">Prof. Amos Njuguna</h2>
         </a>
         <ul class="header__nav__list">
-            <li class="header__nav__list__item">
-                <a href="#purpose">Purpose</a>
-            </li>
-
-            <li class="header__nav__list__item">
-                <a href="#focus">Focus</a>
-            </li>
-
-            <li class="header__nav__list__item">
-                <a href="#impact">Impact</a>
-            </li>
-            <li class="header__nav__list__item">
-                <a href="#community">Community</a>
-            </li>
-            <li class="header__nav__list__item">
-                <a href="#recognition">Recognition</a>
-            </li>
-
-            <li class="header__nav__list__item">
-                <a href="#connect">Connect</a>
-            </li>
+            <ul class="header__nav__list">
+                {
+                    [
+                        "Purpose",
+                        "Focus",
+                        "Impact",
+                        "Community",
+                        "Recognition",
+                        "Connect",
+                    ].map((item) => (
+                        <li class="header__nav__list__item">
+                            <a href={`#${item.toLowerCase()}`}>{item}</a>
+                        </li>
+                    ))
+                }
+            </ul>
         </ul>
     </nav>
 </header>
+
+<script>
+    const headerEl = document.querySelector(".header") as HTMLElement;
+    const scrollTrigger = 60;
+
+    window.addEventListener("scroll", () => {});
+</script>
 
 <style lang="scss" scoped>
     @use "@styles/abstracts/variables.scss" as *;
@@ -48,7 +46,7 @@ import logo from "@assets/prof-bg-crop.png";
     @use "@styles/abstracts/functions.scss" as *;
 
     .header {
-        padding: rem(16) $base-spacing;
+        padding: rem(32) $base-spacing;
         top: 0;
         left: 0;
         background-color: #fff;
@@ -65,21 +63,23 @@ import logo from "@assets/prof-bg-crop.png";
         }
 
         @media screen and (max-width: $breakpoint-sm) {
-            padding:rem(16) calc($base-spacing - rem(96));
+            padding: rem(16) calc($base-spacing - rem(96));
         }
 
         @media screen and (max-width: $breakpoint-xs) {
-            padding:rem(16) rem(32);
-            
+            padding: rem(16) rem(32);
         }
 
         &__nav {
             @include d-flex-between-center;
+            padding: rem(16) 0;
 
             &__brand {
-                width: auto;
-                height: rem(80);
                 cursor: pointer;
+                font-size: rem(40);
+                font-weight: 500;
+                color: $color-dark-3;
+                font-family: "Bricolage Grotesque", sans-serif;
             }
 
             &__list {
@@ -94,7 +94,7 @@ import logo from "@assets/prof-bg-crop.png";
 
                 &__item {
                     flex: 1;
-                    font-size: rem(24);
+                    font-size: rem(28);
                     font-weight: 400;
 
                     a {
@@ -121,6 +121,10 @@ import logo from "@assets/prof-bg-crop.png";
                     display: none;
                 }
             }
+        }
+
+        &.scrolled {
+            background-color: #333333 !important;
         }
     }
 </style>

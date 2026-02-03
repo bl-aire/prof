@@ -1,12 +1,16 @@
 ---
 //@: Assets
+import why from "@assets/why.jpeg";
 
 //@: Components
+import Badge from "@components/shared/Badge.astro";
+import Image from "astro/components/Image.astro";
 ---
 
 <section class="purpose" id="purpose">
     <div class="purpose__content">
         <div class="purpose__content__stack">
+            <Badge>Purpose</Badge>
             <h1>Why I Do This Work</h1>
         </div>
         <div class="purpose__content__stack">
@@ -20,6 +24,13 @@
             </p>
         </div>
     </div>
+    <div class="purpose__box">
+        <Image
+            src={why}
+            alt="Africa Evidence Summit"
+            class="purpose__box__img"
+        />
+    </div>
 </section>
 
 <style lang="scss" scoped>
@@ -28,24 +39,17 @@
     @use "@styles/abstracts/functions.scss" as *;
 
     .purpose {
-        padding: rem(100) $base-spacing;
-        scroll-margin-top: 160px;
-
-        @media screen and (min-width: $breakpoint-md) {
-            background: rgba(0, 0, 0, 0.6) url("../../../assets/why-bg.jpeg") fixed center/cover no-repeat;
-            padding: 0;
-        }
-
+        padding: rem(200) $base-spacing;
+        position: relative;
+        @include d-flex-between-center;
+        gap: rem(100);
+        scroll-margin-top: 150px;
         @media screen and (max-width: $breakpoint-xl) {
-            padding: 0 calc($base-spacing - rem(96));
+            padding: calc($base-spacing - rem(96));
         }
 
         @media screen and (max-width: $breakpoint-md) {
             gap: rem(96);
-        }
-
-        @media screen and (min-width: $breakpoint-md) {
-            padding:0;
         }
 
         @media screen and (max-width: $breakpoint-sm) {
@@ -54,44 +58,22 @@
         }
 
         @media screen and (max-width: $breakpoint-xs) {
-            padding: rem(0) rem(32);
+            padding: rem(160) rem(32);
             gap: rem(96);
         }
 
         &__content {
-            padding: rem(128) $base-spacing;
-
-            @media screen and (max-width: $breakpoint-xl) {
-                padding: calc($base-spacing - rem(96));
-            }
-
-            @media screen and (max-width: $breakpoint-md) {
-                padding: rem(80) 0;
-            }
-
-            @media screen and (max-width: $breakpoint-sm) {
-                padding: rem(96) rem(0);
-            }
-
-            @media screen and (min-width: $breakpoint-md) {
-                background-color: rgba(0, 0, 0, 0.4);
-                padding: rem(200) $base-spacing;
-            }
+            width: min(rem(900), 100%);
 
             &__stack {
-                width: min(rem(1200), 100%);
+                width: 100%;
                 gap: rem(50);
                 @include d-flex-column;
-                margin: auto;
-                text-align: center;
 
                 @media screen and (max-width: $breakpoint-md) {
                     margin: auto;
                 }
 
-                @media screen and (min-width: $breakpoint-md) {
-                    width: 50%;
-                }
 
                 h1 {
                     font-size: rem(60);
@@ -100,10 +82,6 @@
                     font-family: "Bricolage Grotesque", sans-serif;
                     word-spacing: -2px;
                     letter-spacing: -1px;
-
-                    @media screen and (min-width: $breakpoint-md) {
-                        color: $color-white;
-                    }
                 }
 
                 p {
@@ -112,11 +90,17 @@
                     font-weight: 400;
                     line-height: 3ch;
                     color: $color-dark-3;
-
-                    @media screen and (min-width: $breakpoint-md) {
-                        color: $color-white;
-                    }
                 }
+            }
+        }
+
+        &__box {
+            width: min(rem(900), 100%);
+            height: auto;
+
+            img {
+                size: inherit;
+                border-radius: 19% 81% 17% 83% / 72% 13% 87% 28%;
             }
         }
     }

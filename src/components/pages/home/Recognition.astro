@@ -1,8 +1,10 @@
 ---
 //@: Assets
+import cert from "@assets/cert.jpeg";
 
 //@: Components
 import Badge from "@components/shared/Badge.astro";
+import Image from "astro/components/Image.astro";
 ---
 
 <section class="recognition" id="recognition">
@@ -30,6 +32,9 @@ import Badge from "@components/shared/Badge.astro";
         </div>
         <div class="recognition__content__box">
             <span></span>
+        </div>
+        <div class="recognition__content__cert">
+            <Image src={cert} alt="Africa Evidence Leadership Award Certificate" class="recognition__content__cert__img"/>
         </div>
     </div>
 </section>
@@ -95,11 +100,23 @@ import Badge from "@components/shared/Badge.astro";
                     color: $color-dark;
                 }
             }
+
             &__box {
                 width: rem(200);
                 border-bottom: 1px solid $color-dark;
-                margin-top: rem(50);
+                margin: rem(30) 0;
+            }
+
+            &__cert{
+                width: min(rem(700), 100%);
+                height: auto;
+
+                img{
+                    size: inherit;
+                    border-radius:19% 81% 17% 83% / 72% 13% 87% 28% ; 
+                }
             }
         }
+
     }
 </style>

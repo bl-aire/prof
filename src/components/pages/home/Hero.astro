@@ -12,14 +12,9 @@ import Button from "@components/shared/Button.astro";
     <div class="hero__stack">
         <p class="hero__stack__subtitle">ACADEMIC LEADER & RESEARCHER</p>
         <h1 class="hero__stack__title">
-            Turning Evidence and<br/> Education into Meaningful
+            Turning Evidence and Education into 
             <span class="hero__stack__title__span__title">
-                <span>Improvements</span>
-                <Image
-                    src={stroke}
-                    alt="Stroke"
-                    class="hero__stack__title__span__title__stroke"
-                />
+                Meaningful Improvements
             </span> in People's Lives.
         </h1>
     </div>
@@ -27,10 +22,8 @@ import Button from "@components/shared/Button.astro";
         <p class="hero__stack__content">
             Prof. Amos Gitau Njuguna is a senior academic leader working across
             universities, research networks, and community institutions to
-            ensure that <span class="hero__stack__content__span"
-                >education and evidence translate into real improvements in
-                wellbeing, opportunity, and inclusion.</span
-            >
+            ensure that education and evidence translate into real improvements in
+            wellbeing, opportunity, and inclusion.
         </p>
         <a href="#purpose">
             <Button>Explore &rarr;</Button>
@@ -47,12 +40,14 @@ import Button from "@components/shared/Button.astro";
         padding: rem(200) $base-spacing;
         margin: rem(150) 0 0;
         position: relative;
-        @include d-flex-between-center;
-        gap: rem(100);
-        scroll-margin-top: 80px;
+        align-items: center;
+        gap: rem(64);
+        scroll-margin-top: 150px;
+        @include d-flex-column;
+        background-color: $color-dark-blue;
 
         @media screen and (min-width: $breakpoint-md) {
-            margin: rem(128) 0;
+            margin: rem(128) 0 0;
         }
 
         @media screen and (max-width: $breakpoint-xl) {
@@ -61,53 +56,44 @@ import Button from "@components/shared/Button.astro";
         }
 
         @media screen and (max-width: $breakpoint-md) {
-            gap: rem(96);
+            gap: rem(64);
         }
 
         @media screen and (max-width: $breakpoint-sm) {
-            @include d-flex-column;
-            gap: rem(80);
+            gap: rem(32);
         }
 
         @media screen and (max-width: $breakpoint-xs) {
             padding: rem(160) rem(32);
-            gap: rem(96);
+            gap: rem(32);
         }
 
         &__stack {
             @include d-flex-column;
             gap: rem(48);
-            width: min(rem(1200), 100%);
+            width: min(rem(1500), 100%);
+            align-items: center;
+            text-align: center;
 
             &__title {
                 font-size: rem(72);
                 font-weight: 500;
-                color: $color-dark-3;
+                color: $color-white;
                 font-family: "Bricolage Grotesque", sans-serif;
                 word-spacing: -2px;
                 letter-spacing: -1px;
 
+
                 &__span__title {
                     font-size: rem(80);
-                    display: flex;
-                    flex-direction: column;
-
-                    &__stroke {
-                        width: 100%;
-                        height: 10px;
-                        margin-top: -10px;
-
-                        @media screen and (min-width: $breakpoint-md) {
-                            width:70%;
-                        }
-                    }
+                    color: $color-light-blue;
                 }
             }
 
             &__subtitle {
                 font-size: rem(20);
                 font-weight: 600;
-                color: $color-dark-3;
+                color: $color-light-blue;
                 letter-spacing: rem(2);
             }
 
@@ -115,11 +101,7 @@ import Button from "@components/shared/Button.astro";
                 font-size: rem(28);
                 font-weight: 400;
                 line-height: 3ch;
-                color: $color-dark-3;
-
-                &__span {
-                    color: $color-dark;
-                }
+                color: $color-white;
             }
         }
     }
